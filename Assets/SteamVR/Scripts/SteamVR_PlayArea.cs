@@ -28,7 +28,7 @@ public class SteamVR_PlayArea : MonoBehaviour
 	public Size size;
 	public Color color = Color.cyan;
 
-	[HideInInspector]
+
 	public Vector3[] vertices;
 
 	public static bool GetBounds( Size size, ref HmdQuad_t pRect )
@@ -101,6 +101,8 @@ public class SteamVR_PlayArea : MonoBehaviour
 			var c = corners[i];
 			vertices[i] = new Vector3(c.v0, 0.01f, c.v2);
 		}
+
+		GameObject.FindWithTag("PlaySpace").SendMessage("PlayAreaResolved", Vector2.Distance(new Vector2(vertices[0].x, vertices[0].y), new Vector2(vertices[1].x, vertices[1].y)));
 
 		if (borderThickness == 0.0f)
 		{
@@ -280,4 +282,3 @@ public class SteamVR_PlayArea : MonoBehaviour
 		BuildMesh();
 	}
 }
-

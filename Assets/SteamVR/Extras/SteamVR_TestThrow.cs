@@ -19,10 +19,12 @@ public class SteamVR_TestThrow : MonoBehaviour
 	void FixedUpdate()
 	{
 		var device = SteamVR_Controller.Input((int)trackedObj.index);
+		Debug.Log((int)trackedObj.index);
 		if (joint == null && device.GetTouchDown(SteamVR_Controller.ButtonMask.Trigger))
 		{
 			var go = GameObject.Instantiate(prefab);
 			go.transform.position = attachPoint.transform.position;
+			SteamVR_Controller.Input(1).TriggerHapticPulse(3000);
 
 			joint = go.AddComponent<FixedJoint>();
 			joint.connectedBody = attachPoint;

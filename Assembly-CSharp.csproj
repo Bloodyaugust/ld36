@@ -45,6 +45,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Behaviors\FollowCamera.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\MoveForward.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\Obstacle.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\Patrol.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\PlaySpace.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\SpawnObstacles.cs" />
+     <Compile Include="Assets\Scripts\Behaviors\VibrateOnTrigger.cs" />
      <Compile Include="Assets\Scripts\CameraHandler.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_GazeTracker.cs" />
      <Compile Include="Assets\SteamVR\Extras\SteamVR_LaserPointer.cs" />
